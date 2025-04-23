@@ -13,14 +13,17 @@ const Profiles = () => {
 					{/* Profile Card */}
 					<div className="bg-gray-50 p-6 rounded-lg flex flex-col items-center w-full md:w-1/3 text-center">
 						<Image
-							src="https://i.ibb.co.com/KpMYqbB6/61k-MAf-Irw-L-AC-UF1000-1000-QL80.jpg"
+							src="https://mgcfeni.edu.bd/midea/featuredimage/featuredimage2019-03-04-13-47-19_5c7d1e5732a77.jpg"
 							width={400}
 							height={400}
 							alt="logo"
 							className="w-32 h-32 rounded-full border-4 border-white shadow-md"
 						/>
 						<h2 className="mt-4 text-xl font-semibold">{user?.user?.name}</h2>
-						<p className="text-gray-500 text-sm">Accounts Manager, Amix Corp</p>
+						<p className="text-gray-500 text-sm capitalize">
+							Role:
+							<span className="ml-1">{user?.user?.role}</span>
+						</p>
 						<div className="mt-4 flex gap-6 text-gray-600">
 							<div className="flex items-center gap-1">
 								<span className="text-lg">👥</span> 254
@@ -53,12 +56,8 @@ const Profiles = () => {
 								<p className="font-medium">********</p>
 							</div>
 							<div>
-								<p className="text-gray-500 text-sm">Phone No</p>
-								<p className="font-medium">..</p>
-							</div>
-							<div>
-								<p className="text-gray-500 text-sm">Message</p>
-								<p className="font-medium"> .. </p>
+								<p className="text-gray-500 text-sm">User Role</p>
+								<p className="font-medium capitalize">{user?.user?.role}</p>
 							</div>
 						</div>
 					</div>
