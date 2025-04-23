@@ -6,7 +6,7 @@ const Profiles = () => {
 	const user = useUser();
 
 	return (
-		<div className="bg-gray-200 flex flex-col">
+		<div className="flex justify-center items-center h-fit w-full">
 			{/* Navbar */}
 			<div className="flex items-center justify-center p-6 flex-1">
 				<div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-4xl flex flex-col md:flex-row gap-6">
@@ -20,22 +20,10 @@ const Profiles = () => {
 							className="w-32 h-32 rounded-full border-4 border-white shadow-md"
 						/>
 						<h2 className="mt-4 text-xl font-semibold">{user?.user?.name}</h2>
-						<p className="text-gray-500 text-sm capitalize">
-							Role:
-							<span className="ml-1">{user?.user?.role}</span>
+						<p className="text-gray-500 text-sm">
+							Email:
+							<span className="ml-1">{user?.user?.email}</span>
 						</p>
-						<div className="mt-4 flex gap-6 text-gray-600">
-							<div className="flex items-center gap-1">
-								<span className="text-lg">👥</span> 254
-							</div>
-							<div className="flex items-center gap-1">
-								<span className="text-lg">📧</span> 54
-							</div>
-						</div>
-						<button className=" mt-10 text-teal-500 btn btn-outline">
-							{" "}
-							LogOut
-						</button>
 					</div>
 					{/* Profile Details */}
 					<div className="flex-1 p-6 bg-white rounded-lg">
