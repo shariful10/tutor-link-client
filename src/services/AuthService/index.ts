@@ -19,10 +19,9 @@ export const registerUser = async (data: FieldValues) => {
 		}
 
 		const result = await res.json();
-		// console.log(result);
 		return result;
-	} catch (error) {
-		console.error("Registration Error:", error);
+	} catch (err) {
+		console.error("Registration Error:", err);
 		return { success: false, message: "Registration failed!" };
 	}
 };
@@ -40,7 +39,6 @@ export const loginUser = async (userData: FieldValues) => {
 			}
 		);
 		const result = await res.json();
-		console.log(result.token, "token dekhbo");
 
 		if (result.status && result.token) {
 			(await cookies()).set("accessToken", result.token, {
@@ -51,14 +49,14 @@ export const loginUser = async (userData: FieldValues) => {
 			});
 		}
 		return result;
-	} catch (error) {
-		console.error(error);
+	} catch (err) {
+		console.error(err);
 	}
 };
 
 export const currentUser = async () => {
 	const accessToken = (await cookies()).get("accessToken")?.value;
-	// console.log(accessToken)
+
 	let decodedData = null;
 	if (accessToken) {
 		decodedData = await jwtDecode(accessToken);
